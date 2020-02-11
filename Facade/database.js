@@ -1,15 +1,15 @@
-const getData = () => [{
-    name: "Harry Poten and the Soap of secrets",
-    id: 1,
-    length: "126 min"
-}, {
-    name: "Tutmanik with Leopardo",
-    id: 2,
-    length: "156 min"
-}, {
-    name: "Recep Ivedik",
-    id: 3,
-    length: "91 min"
-}];
+class Database {
+    constructor() {
+        this.availableMedia = [];
+    }
 
-module.exports = getData;
+    addMedia(media) {
+        this.availableMedia.push(media);
+    }
+
+    getMedia() {
+        return this.availableMedia;
+    }
+}
+
+module.exports = Database;

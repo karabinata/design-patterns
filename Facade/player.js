@@ -1,8 +1,6 @@
-const getData = require('./database');
-
 class Player {
     constructor() {
-        this.playlist = getData();
+        this.playlist = [];
         this.currentIndex = 0;
     }
 
@@ -20,6 +18,11 @@ class Player {
         }
 
         console.log(`Started playing ${currentPlayListItem.name} with duration ${currentPlayListItem.length}`);
+    }
+
+    load(media) {
+        this.playlist.push(media);
+        console.log(`Loaded ${media.name} with duration ${media.length}`);
     }
 
     stop() {
