@@ -1,8 +1,6 @@
-const Calculator = require('./calculator');
-
 class CalculatorCommand {
     constructor(calculator, operator, operand) {
-        this.calculator = new Calculator();
+        this.calculator = calculator;
         this.operator = operator;
         this.operand = operand;
     }
@@ -12,7 +10,7 @@ class CalculatorCommand {
     }
 
     unExecute() {
-        this.calculator.operation(undo(this.operator), this.operand);
+        this.calculator.operation(this.undo(this.operator), this.operand);
     }
 
     undo(operatorToUndo) {
